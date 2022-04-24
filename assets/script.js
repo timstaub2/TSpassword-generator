@@ -43,6 +43,10 @@ function generatePassword(usedCharectors, length) {
 // Write password to the #password input
 function writePassword() {
   var length = window.prompt("Enter a number from 8 to 128 for password length.");
+  if (length < 8 || length > 128) {
+    window.alert("You have not selected a valid password length.  Try again.");
+    return writePassword();
+  }
   var isUpper = window.confirm("Would you like to use Upper Alpha characters?");
   var isLower = window.confirm("Would you like to use Lower Alpha characters?");
   var isNumber = window.confirm("Would you like to use numbers?");
